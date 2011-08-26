@@ -573,7 +573,7 @@ if __name__ == '__main__':
         texStatus, isFatal, numErrs, numWarns = run_makeindex(fileName)
     
     elif texCommand == 'clean':
-        texCommand = 'latexmk.pl -CA '
+        texCommand = TM_BUNDLE_SUPPORT + '/bin/latexmk.pl -CA '
         runObj = Popen(texCommand,shell=True,stdout=PIPE,stdin=PIPE,stderr=STDOUT,close_fds=True)
         commandParser = ParseLatexMk(runObj.stdout,True,fileName)
         
